@@ -4,6 +4,7 @@ Memory::Memory()
 {
     this->BlockDeviceBASE = Memory_BASE;
     this->BlockDeviceSIZE = Memory_SIZE;
+    
     this->PMem = (uint8_t *)malloc(BlockDeviceSIZE);
     static const uint32_t init_img[] = {
         0x00d605b3,
@@ -125,7 +126,7 @@ Memory::Memory()
     };
     
     memcpy(GuestToHost(BlockDeviceBASE), init_img, sizeof(init_img));
-
+    
 }
 
 

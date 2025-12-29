@@ -15,3 +15,4 @@
 #define DEVICE_TREE_ADDR  0x20000000
 #define HART_ID  0x0
 #define START_MODE_M
+#define DIFFTEST_ON

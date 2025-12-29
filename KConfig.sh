@@ -65,3 +65,7 @@ fi
 if [ "${CONFIG_SELECT_START_MODE_U:-n}" = "y" ]; then
     echo "#define START_MODE_M" >>  "./Include/auto.h" 
 fi
+
+if [ "${CONFIG_DIFFTEST_ON:-n}" = "y" ]; then
+    echo "#define DIFFTEST_ON" >>  "./Include/auto.h" 
+fi

@@ -6,7 +6,7 @@ Monitor::Monitor(int argc, char *argv[],ISA * InCPU){
     
     this->WEMUStateObj = new WEMUState();
     
-    this->SOCObj = new SOC(WEMUStateObj,this->img_file,this->dtb_file,InCPU);
+    this->SOCObj = new SOC(diff_so_file,WEMUStateObj,this->img_file,this->dtb_file,InCPU);
     
     this->sdbObj = new sdb(SOCObj->BUSObj,SOCObj->CPUObj);
     printf("aa==%s\n",this->img_file);

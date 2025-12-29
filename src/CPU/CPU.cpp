@@ -1,14 +1,18 @@
 #include "../../Include/CPU.hpp"
 
-CPU::CPU(WEMUState * InWEMUState,ISA * InCPU)
+CPU::CPU(WEMUState * InWEMUState,ISA * InCPU,DiffTestDut *InDiffTestDutObj)
 {
     this->ISAObj = InCPU;
     this->WEMUStateObj = InWEMUState;
+    this->DiffTestDutObj = InDiffTestDutObj;
 }
 
 void CPU::exec_once()
 {
     this->ISAObj->isa_exec_once();
+    
+    this->DiffTestDutObj->difftest_step(this->ISAObj->Get_PC(),this->ISAObj->Get_PC());
+    
 }
 void CPU::execute(uint64_t n)
 {

@@ -89,5 +89,7 @@ menu Debug
 config PRINTF_EXEC_INSTR_COUNT     
     bool "printf exec instr count"          
     default n
- 
+config DIFFTEST_ON     
+    bool "difftest on"          
+    default n
 endmenu
